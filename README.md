@@ -34,8 +34,8 @@ Open http://localhost:4200, register a user, then use Products / Orders / Dashbo
 
 ## Tests
 ```bash
-cd backend  && npm test     # Jest + Supertest (DBs are mocked, no servers needed)
-cd frontend && npm test     # Karma/Jasmine (needs Chrome installed)
+cd backend  && npm test     
+cd frontend && npm test     
 ```
 
 ## API
@@ -53,7 +53,6 @@ All routes except `/api/auth/*` and `/api/health` need `Authorization: Bearer <t
 | GET/PUT/DELETE | /api/orders/:id | read / update `{productIds}` / delete (204) |
 | GET | /api/weather?lat=&lon= | current weather (default Pune) |
 
-Error format: `{ "message": "..." }`, validation errors add `"errors": [{field, message}]`.
 Status codes: 400 validation, 401 auth, 404 not found, 409 duplicate, 502/504 weather upstream.
 
 ## Design notes
